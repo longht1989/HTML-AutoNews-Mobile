@@ -1,0 +1,61 @@
+@media screen and (max-width: 767px) {}
+
+@media screen and (min-width: 768px) {
+    html {
+        background-color: #bfbfbf;
+    }
+
+    body {
+        max-width: 600px;
+        margin: auto;
+        // background-color: #fff;
+    }
+
+    .site-header {
+        &.is-pinned {
+            max-width: 600px;
+            margin: auto;
+        }
+    }
+
+    .hero-zone {
+        .item {
+
+            .photo-bg,
+            .video-bg {
+                width: auto;
+                height: 600px;
+            }
+
+            &.has-black-mask {
+                &::before {
+                    height: 600px;
+                }
+            }
+        }
+    }
+
+    #wrap {
+        &-search {
+            .form-control {
+                max-width: 600px;
+            }
+        }
+
+        &-menu {
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+
+            &.is-active {
+                opacity: 1;
+                left: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {}
+
+@media screen and (min-width: 1200px) {}

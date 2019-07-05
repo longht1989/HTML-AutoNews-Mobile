@@ -1,0 +1,211 @@
+@import url('variables.less');
+
+// Header style
+.site-header {
+    // background-color: rgba(0, 0, 0, .5);
+    padding: 1rem 0;
+    position: sticky;
+    position: -webkit-sticky;
+    z-index: 30;
+    transition: all 0.2s ease-in-out;
+
+    &.is-pinned {
+        background-color: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .logo {
+        line-height: 40px;
+        float: left;
+        margin: 0;
+
+        img {
+            display: block;
+            height: 40px;
+            width: auto;
+        }
+    }
+
+    &__tools {
+        float: right;
+        line-height: 40px;
+        font-size: 24px;
+
+        *[id*="button-"] {
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        *[class*="fa"] {
+            width: 40px;
+            text-align: center;
+        }
+    }
+}
+
+#site-mask {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: black;
+    opacity: 0.9;
+    z-index: 31;
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
+.site-footer {
+    padding: 3.5rem 0px 2rem;
+    background-color: #181818;
+    border-top: 5px solid @primary;
+    text-align: center;
+    color: white;
+    font-size: 0.75rem;
+
+    img {
+        max-width: 5rem;
+        height: auto;
+    }
+
+    p {
+        margin-bottom: 0.5rem;
+    }
+
+    .logo-zone {
+        margin-bottom: 3rem;
+    }
+
+    .box-heading {
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .box-content {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: space-around;
+
+        .fab {
+            display: flex;
+            font-size: 1.5rem;
+            color: white;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                color: @primary;
+            }
+        }
+    }
+
+    .copy {
+        &-info {
+            margin: 3rem 0;
+        }
+    }
+}
+
+/* extra content */
+#wrap {
+    &-search {
+        position: fixed;
+        z-index: 32;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        display: none;
+        padding: 3rem 0;
+
+        .form-control {
+            margin-bottom: 1rem;
+            width: 90vw;
+        }
+
+        &.is-active {
+            display: block;
+        }
+
+        .fa-times {
+            cursor: pointer;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+    }
+
+    &-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 100%;
+        background-color: #fff;
+        overflow-y: auto;
+        transition: all 0.2s ease-out;
+        z-index: 32;
+
+        &.is-active {
+            left: 20%;
+        }
+
+        .cate__sub {
+            list-style-type: none;
+            padding: 0;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+
+            li {
+                padding: 1rem 0;
+            }
+
+            a {
+                display: block;
+            }
+        }
+
+        .fa-times {
+            cursor: pointer;
+            position: absolute;
+            color: #fff;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .logo {
+            padding: 1rem 1.5rem;
+            background-color: @primary;
+
+            img {
+                max-height: 40px;
+                width: auto;
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+            }
+        }
+    }
+}
