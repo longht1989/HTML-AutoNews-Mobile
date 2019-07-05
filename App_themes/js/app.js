@@ -36,9 +36,6 @@ $(function() {
             currentCTA = $(".bx-viewport .current:not([class='bx-clone'])").find('.cta');
             heroCTApos = currentCTA.offset().top + currentCTA.outerHeight();
             $('.hero-zone .bx-pager').css('top', heroCTApos);
-        },
-        onSlideAfter: function() {
-            console.log('after slide');
         }
     });
 
