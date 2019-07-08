@@ -19,13 +19,15 @@ $(function() {
         maxSlides: 1,
         slideMargin: 0,
         controls: false,
-        pause: 10000,
+        pause: 5000,
         // customise dynamic position for pager
         onSliderLoad: function() {
             console.log('loaded slide');
+            zonePos = $('.bx-viewport').parents('.hero-zone').offset().top;
             currentCTA = $(".bx-viewport .current:not([class='bx-clone'])").find('.cta');
             heroCTApos = currentCTA.offset().top + currentCTA.outerHeight();
-            $('.hero-zone .bx-pager').css('top', heroCTApos);
+            pagerPos = heroCTApos - zonePos;
+            $('.hero-zone .bx-pager').css('top', pagerPos);
         },
         onSlideBefore: function() {
             console.log('before slide');
@@ -33,9 +35,11 @@ $(function() {
             current = heroslider.getCurrentSlide() + 1;
             $(".bx-viewport .item:not([class='bx-clone'])").eq(current).addClass('current');
             console.log('current is ' + current);
+            zonePos = $('.bx-viewport').parents('.hero-zone').offset().top;
             currentCTA = $(".bx-viewport .current:not([class='bx-clone'])").find('.cta');
             heroCTApos = currentCTA.offset().top + currentCTA.outerHeight();
-            $('.hero-zone .bx-pager').css('top', heroCTApos);
+            pagerPos = heroCTApos - zonePos;
+            $('.hero-zone .bx-pager').css('top', pagerPos);
         }
     });
 
@@ -75,6 +79,10 @@ $(function() {
         $(this).siblings('.table-responsive').find('.f1-table-detail').toggleClass("is-active");
     });
 
+    mediumZoom('[data-zoomable]', {
+        margin: 24,
+        background: '#272727'
+    });
 });
 
 function windowScroll() {
