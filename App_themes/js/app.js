@@ -3,6 +3,15 @@ $(function() {
     /*pin header */
     window.onscroll = function() { windowScroll() };
 
+    // fix URL click on bxslider
+    if (window.navigator.userAgent.toLowerCase().indexOf("chrome") > 0) {
+        $("body").on("mousedown", ".bx-viewport a", function() {
+            if ($(this).attr("href") && $(this).attr("href") != "#") {
+                window.location = $(this).attr("href");
+            }
+        });
+    }
+
     /*button action*/
     $("#button-search").on('click', btnClick);
     $("#button-menu").on('click', btnClick);
@@ -52,6 +61,7 @@ $(function() {
         auto: true,
         pause: 20000
     });
+
     // top view
     $('.top-listing.vertical .wrap').bxSlider({
         slideWidth: '260',
@@ -62,6 +72,7 @@ $(function() {
         auto: true,
         pause: 20000
     });
+
     // > tab
     $(".f1-table .panel-title a").click(function(e) {
         e.preventDefault();
@@ -85,6 +96,25 @@ $(function() {
     });
 });
 
+
+// search click
+$('#button-search').on('click', searchClick);
+
+function searchClick(e) {
+    $('#searchInput').focus();
+}
+
+$('#searchInput').focus(function() {
+    console.log('search on focus');
+    $('.search-suggestion').show();
+});
+
+$('#searchInput').focusout(function() {
+    console.log('search out focus');
+    setTimeout(function() { $('.search-suggestion').hide(); }, 300);
+});
+
+// customise function
 function windowScroll() {
     var headerHeight = $("#site-header").height();
     if (document.body.scrollTop > headerHeight || document.documentElement.scrollTop > headerHeight) {
@@ -115,4 +145,26 @@ function siteMaskClick(e) {
     e.stopPropagation();
     removeSiteMask();
     $("div[id*='wrap-']").removeClass('is-active');
+}
+
+// swap tab function
+$('.tab-nav a').on('click', navtabClick);
+
+function navtabClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    tab = $(this).attr('data-target');
+    swapTab(tab);
+}
+
+function swapTab(tab) {
+    $("a[data-target=" + tab + "]").closest(".tab-nav").find('a').removeClass('active');
+    $("a[data-target=" + tab + "]").addClass('active');
+    $('#' + tab).siblings(".tab-pane").removeClass('active');
+    $('#' + tab).addClass('active');
+}
+
+// light gallery
+if ($(".lightgallery").length > 0) {
+    $(".lightgallery").lightGallery();
 }

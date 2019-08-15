@@ -1,8 +1,7 @@
 // Header style
 .site-header {
     padding: 1rem 0;
-    position: sticky;
-    position: -webkit-sticky;
+    position: relative;
     z-index: 30;
     transition: all 0.2s ease-in-out;
 
@@ -55,7 +54,7 @@
     left: 0;
     top: 0;
     background-color: black;
-    opacity: 0.9;
+    opacity: 1;
     z-index: 31;
     display: none;
 
@@ -73,7 +72,7 @@
     font-size: 0.75rem;
 
     img {
-        max-width: 5rem;
+        max-width: 10rem;
         height: auto;
     }
 
@@ -124,16 +123,16 @@
     &-search {
         position: fixed;
         z-index: 32;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         display: none;
-        padding: 3rem 0;
+        padding: 3rem 1rem;
+        overflow: auto;
 
         .form-control {
             margin-bottom: 1rem;
-            width: 90vw;
         }
 
         &.is-active {
@@ -144,10 +143,127 @@
             cursor: pointer;
             color: #fff;
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 1.5rem;
+            right: 1.5rem;
             font-size: 1.5rem;
             opacity: 0.7;
+        }
+
+        .suggestion {
+            margin-bottom: 16px;
+
+            .label {
+                color: white;
+                font-weight: bold;
+                margin-right: 16px;
+                opacity: 0.8;
+                font-size: 14px;
+                text-transform: uppercase;
+
+                .fal {
+                    position: relative;
+                    margin-right: 4px;
+                    top: 3px;
+                    bottom: auto;
+                    right: auto;
+                }
+            }
+
+            .item {
+                display: inline-block;
+                color: rgba(255, 255, 255, 0.8);
+                padding: 6px 16px;
+                font-size: 14px;
+                transition: all .2s ease-in-out;
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.15);
+                margin-top: 0.5rem;
+
+                &+.item {
+                    margin-left: 12px;
+                }
+
+                &:hover {
+                    opacity: 1;
+                    background: $blue;
+                    color: white;
+                }
+            }
+        }
+
+        .search-form {
+            position: relative;
+            @include clearfix;
+
+            .btn-primary {
+                float: right;
+            }
+        }
+
+        .search-suggestion {
+            display: none;
+            padding: 16px;
+            background-color: #fff;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            margin-top: 1rem;
+
+            .heading {
+                font-size: 20px;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 16px;
+            }
+
+            .suggestion-wrap {
+                &+.suggestion-wrap {
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
+                    padding-top: 16px;
+                    margin-top: 16px;
+                }
+            }
+
+            .title {
+                font-size: 18px;
+                margin-bottom: 8px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                a {
+                    font-size: 14px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .text {
+                font-size: 16px;
+                padding: 4px 8px;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    background-color: #f0f0f0;
+                }
+
+                &.text {
+                    margin-top: 8px;
+                }
+
+                a {
+                    display: block;
+                }
+
+                .highlight {
+                    color: $blue;
+                    font-weight: bold;
+                }
+            }
         }
     }
 
@@ -195,13 +311,11 @@
 
         .logo {
             padding: 1rem 1.5rem;
-            background-color: $primary;
+            background-color: #333;
 
             img {
                 max-height: 40px;
                 width: auto;
-                -webkit-filter: grayscale(100%);
-                filter: grayscale(100%);
             }
         }
     }

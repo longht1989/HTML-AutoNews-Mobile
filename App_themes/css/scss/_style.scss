@@ -24,6 +24,7 @@
     &__heading {
         text-transform: uppercase;
         font-weight: bold;
+        font-size: 1rem;
     }
 
     &__summary,
@@ -110,8 +111,12 @@
             }
 
             .active {
-                background-color: $primary;
-                border-color: $primary;
+                background-color: white;
+                border-color: transparent;
+                width: 24px;
+                height: 24px;
+                top: -4px;
+                position: relative;
             }
         }
     }
@@ -204,7 +209,8 @@
     }
 
     .cta {
-        margin-top: 3.5rem;
+        margin: 3.5rem auto 0;
+        max-width: 150px;
 
         a {
             display: block;
@@ -240,6 +246,8 @@
 
     .rank-2-stories {
         margin-top: 6rem;
+        z-index: 3;
+        position: relative;
 
         .story {
             margin-left: 1rem;
@@ -252,6 +260,11 @@
                 left: -1rem;
                 margin: 0;
                 float: left;
+                max-width: 80px;
+
+                @media screen and (min-width: 375px) {
+                    max-width: 120px;
+                }
             }
 
             &__header {
@@ -262,7 +275,9 @@
             }
 
             &__heading {
-                font-weight: bold;
+                overflow: hidden;
+                max-height: 3.7em;
+                // font-weight: normal;
             }
 
             &__meta {}
@@ -282,6 +297,7 @@
                 &__thumb {
                     float: none;
                     left: 0;
+                    max-width: initial;
                 }
 
                 &__header {
@@ -295,6 +311,7 @@
                 &__heading {
                     display: flex;
                     align-items: center;
+                    max-height: initial;
 
                     .fal {
                         font-size: 1.25rem;

@@ -69,3 +69,20 @@
         }
     }
 }
+
+.card-grid {
+    .story {
+        height: 100%;
+        background-color: #fff;
+    }
+}
+
+.zone-brand {
+    .card-grid {
+        .story {
+            &__thumb {
+                border-bottom: 1px solid #f0f0f0;
+            }
+        }
+    }
+}

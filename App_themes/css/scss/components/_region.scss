@@ -1,0 +1,11 @@
+/* zone style */
+.zone {
+    &-common {
+        .form-control {
+            width: 100%;
+            background: #333;
+            color: #fff;
+            border-radius: 0;
+        }
+    }
+}

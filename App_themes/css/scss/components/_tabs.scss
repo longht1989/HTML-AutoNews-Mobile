@@ -1,0 +1,52 @@
+/* Tabs global style */
+.tab {
+    &-nav {
+        margin-bottom: 24px;
+        background: #fff;
+
+        ul {
+            display: flex;
+            padding-left: 0;
+            white-space: nowrap;
+            overflow: auto;
+
+            li {
+                list-style: none;
+                flex: 1 1 auto;
+                text-align: center;
+
+                &+li {
+                    border-left: 1px solid #f0f0f0;
+                }
+
+                a {
+                    display: block;
+                    padding: 0.5rem 1rem;
+                    line-height: 30px;
+                    background-color: #fff;
+                    transition: all 0.2s ease-in-out;
+                    text-transform: uppercase;
+
+                    &.active,
+                    &:hover {
+                        background-color: $blue;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    &-pane {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease-in-out;
+
+        &.active {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
