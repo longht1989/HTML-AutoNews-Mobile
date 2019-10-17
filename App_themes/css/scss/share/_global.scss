@@ -1,0 +1,20 @@
+[aria-expanded="false"] {
+    .short {
+        display: none;
+    }
+}
+
+[aria-expanded="true"] {
+    .full {
+        display: none;
+    }
+
+    .short {
+        display: block;
+    }
+}
+
+.modal.show .modal-dialog {
+    -webkit-transform: translate(0, 20%);
+    transform: translate(0, 20%);
+}

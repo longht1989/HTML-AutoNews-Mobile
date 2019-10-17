@@ -1,10 +1,6 @@
 .page-category {
     .site-header {
         background-color: #000;
-
-        &.is-pinned {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
     }
 
     .hero-zone {
@@ -12,18 +8,7 @@
         margin-bottom: 3rem;
 
         .item {
-            padding-top: 0;
-        }
-
-        .container-fluid {
-            height: 100vh;
-            display: -webkit-flex;
-            display: -moz-flex;
-            display: -ms-flex;
-            display: -o-flex;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            min-height: 90vh;
         }
 
         .bx-pager {}

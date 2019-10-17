@@ -20,35 +20,27 @@ $(function() {
 
     /*slider*/
     // hero index slide
-    var heroCTApos;
-    var currentCTA;
+    var pause = 5000;
     var heroslider = $('.hero-zone .wrap').bxSlider({
+        // stopAutoOnClick: 1,
         auto: 1,
         minSlides: 1,
         maxSlides: 1,
         slideMargin: 0,
         controls: false,
-        pause: 5000,
-        // customise dynamic position for pager
+        pause: pause,
         onSliderLoad: function() {
-            console.log('loaded slide');
-            zonePos = $('.bx-viewport').parents('.hero-zone').offset().top;
-            currentCTA = $(".bx-viewport .current:not([class='bx-clone'])").find('.cta');
-            heroCTApos = currentCTA.offset().top + currentCTA.outerHeight();
-            pagerPos = heroCTApos - zonePos;
-            $('.hero-zone .bx-pager').css('top', pagerPos);
+            $('.hero-zone .bx-pager-item .bx-pager-link').css('width', '0%');
+            $('.hero-zone .bx-pager-item .active').animate({ width: '100%' }, pause, 'linear');
         },
         onSlideBefore: function() {
-            console.log('before slide');
-            $(".bx-viewport .item").removeClass('current');
-            current = heroslider.getCurrentSlide() + 1;
-            $(".bx-viewport .item:not([class='bx-clone'])").eq(current).addClass('current');
-            console.log('current is ' + current);
-            zonePos = $('.bx-viewport').parents('.hero-zone').offset().top;
-            currentCTA = $(".bx-viewport .current:not([class='bx-clone'])").find('.cta');
-            heroCTApos = currentCTA.offset().top + currentCTA.outerHeight();
-            pagerPos = heroCTApos - zonePos;
-            $('.hero-zone .bx-pager').css('top', pagerPos);
+            $('.hero-zone .bx-pager-item .active').finish();
+        },
+        onSlideAfter: function() {
+            heroslider.stopAuto();
+            heroslider.startAuto();
+            $('.hero-zone .bx-pager-item .bx-pager-link').css('width', '0%');
+            $('.hero-zone .bx-pager-item .active').animate({ width: '100%' }, pause, 'linear');
         }
     });
 
@@ -70,7 +62,14 @@ $(function() {
         slideMargin: 20,
         controls: false,
         auto: true,
-        pause: 20000
+        pause: 20000,
+        // set height for wrapper
+        onSliderLoad: function() {
+            var maxHeight = Math.max.apply(null, $(".top-listing.vertical .wrap .item").map(function() {
+                return $(this).outerHeight();
+            }).get());
+            $('.top-listing.vertical .wrap').height(maxHeight);
+        }
     });
 
     // > tab
@@ -105,22 +104,22 @@ function searchClick(e) {
 }
 
 $('#searchInput').focus(function() {
-    console.log('search on focus');
     $('.search-suggestion').show();
 });
 
 $('#searchInput').focusout(function() {
-    console.log('search out focus');
-    setTimeout(function() { $('.search-suggestion').hide(); }, 300);
+    // setTimeout(function() { $('.search-suggestion').hide(); }, 300);
 });
 
 // customise function
 function windowScroll() {
-    var headerHeight = $("#site-header").height();
+    var headerHeight = $("#site-header").outerHeight();
     if (document.body.scrollTop > headerHeight || document.documentElement.scrollTop > headerHeight) {
         $("#site-header").addClass('is-pinned');
+        $("#btnGotop").fadeIn('slow');
     } else {
         $("#site-header").removeClass('is-pinned');
+        $("#btnGotop").fadeOut('slow');
     }
 }
 
@@ -138,6 +137,9 @@ function btnClick(e) {
     openSiteMask();
     var idTarget = $(this).attr('data-target');
     $('#' + idTarget).addClass('is-active');
+    if (idTarget === 'wrap-search') {
+        $('#searchInput').focus();
+    }
 }
 
 function siteMaskClick(e) {
@@ -147,24 +149,54 @@ function siteMaskClick(e) {
     $("div[id*='wrap-']").removeClass('is-active');
 }
 
-// swap tab function
-$('.tab-nav a').on('click', navtabClick);
-
-function navtabClick(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    tab = $(this).attr('data-target');
-    swapTab(tab);
-}
-
-function swapTab(tab) {
-    $("a[data-target=" + tab + "]").closest(".tab-nav").find('a').removeClass('active');
-    $("a[data-target=" + tab + "]").addClass('active');
-    $('#' + tab).siblings(".tab-pane").removeClass('active');
-    $('#' + tab).addClass('active');
-}
-
 // light gallery
 if ($(".lightgallery").length > 0) {
-    $(".lightgallery").lightGallery();
+    var $lg = $('.lightgallery');
+    $lg.lightGallery();
+    $lg.on('onSlideClick.lg', function(event) {
+        $lg.data('lightGallery').destroy(false);
+    });
+}
+
+// detail car page
+if ($(".detail-car-page").length > 0) {
+    // swap tab function
+    $('.tab-nav a').on('click', navtabClick);
+
+    function navtabClick(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        tab = $(this).attr('data-target');
+        swapTab(tab);
+        if (tab === 'car-sameprice') {
+            samePriceSlider.reloadSlider();
+        }
+        // scroll navbar to active tab
+        var position = $(this).position().left;
+        $('.tab-nav.detail__nav ul')[0].scrollLeft += (position - 16);
+    }
+
+    function swapTab(tab) {
+        $("a[data-target=" + tab + "]").closest(".tab-nav").find('a').removeClass('active');
+        $("a[data-target=" + tab + "]").addClass('active');
+        $('#' + tab).siblings(".tab-pane").removeClass('active');
+        $('#' + tab).addClass('active');
+    }
+    // slider in same price
+    var samePriceSlider = $('.top-listing.vertical .wrap').bxSlider({
+        slideWidth: '260',
+        minSlides: 1,
+        maxSlides: 2,
+        slideMargin: 20,
+        controls: false,
+        auto: true,
+        pause: 20000,
+        // set height for wrapper
+        onSliderLoad: function() {
+            var maxHeight = Math.max.apply(null, $(".top-listing.vertical .wrap .item").map(function() {
+                return $(this).outerHeight();
+            }).get());
+            $('.top-listing.vertical .wrap').height(maxHeight);
+        }
+    });
 }

@@ -85,11 +85,55 @@
                         </div>
                     </div>
                     <ul class="detail__social">
-                        <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href=""><i class="fal fa-envelope"></i></a></li>
-                        <li><a href=""><i class="fal fa-share-alt"></i></a></li>
-                        <li><a href=""><i class="fal fa-bookmark"></i></a></li>
-                        <li class="is-active"><a href=""><i class="fal fa-bookmark"></i></a></li>
+                        <li>
+                            <div class="fb-like" data-href="http://autonews.vn/thu-tuong-malaysia-94-tuoi-van-cam-lai-vinfast-hon-100kmh-187.html" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                            <div class="zalo-share-button ml-2" data-href="http://autonews.vn/thu-tuong-malaysia-94-tuoi-van-cam-lai-vinfast-hon-100kmh-187.html" data-oaid="579745863508352884" data-layout="2" data-color="blue" data-customize="false"></div>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#reportModal"><i class="fal fa-comment-alt-exclamation"></i> Báo lỗi bài viết</a>
+                            <!-- Modal -->
+                            <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Báo lỗi bài viết</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="reportEmail">Email bạn đọc</label>
+                                                <input type="mail" class="form-control" id="reportEmail">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="reportSubject">Tiêu đề</label>
+                                                <input type="mail" class="form-control" id="reportSubject">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="reportContent">Nội dung báo lỗi</label>
+                                                <textarea type="mail" class="form-control" id="reportContent"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Đóng</button>
+                                            <button type="button" class="btn btn-primary btn-sm">Gửi</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <script>
+                            (function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id)) return;
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }(document, 'script', 'facebook-jssdk'));
+                        </script>
+                        <script src="https://sp.zalo.me/plugins/sdk.js"></script>
                     </ul>
                     <div class="detail__avatar">
                         <img src="https://source.unsplash.com/800x450/?car/?sig=40" alt="">
@@ -115,6 +159,81 @@
                         <div class="fig">Dàn trải đầy đủ các trang bị từ những phím điều khiển trung tâm tích hợp trên vô-lăng cho đến màn hình giải trí hiện đại.</div>
                     </div>
                     <p>Di chuyển vào khoang cabin, người lái được chào đón bằng hệ thống thông tin giải trí với màn hình cảm ứng cỡ lớn 10,25 inch đặt ở giữa bảng điều khiển và hệ thống đèn trang trí nội thất Sound Mood Lighting. Ngoài ra, khách hàng có thể mua thêm tùy chọn màn hình HUD 8 inch, hệ thống âm thanh cao cấp Bose với 8 loa và một số trang bị khác để biến nội thất của Kia Seltos 2020 trở nên tiện nghi và thoải mái như trong phòng khách.</p>
+                    <section class="zone zone-common">
+                        <div class="container-fluid">
+                            <header class="zone__header">
+                                <h2 class="zone__heading"><a href="02-category.html">Xem theo hãng</a></h2>
+                            </header>
+                            <div class="zone__content">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect4">Hãng xe</label>
+                                    <select class="form-control" id="exampleFormControlSelect4">
+                                        <option>Tất cả</option>
+                                        <option selected="">Audi</option>
+                                        <option>PEUGEOT</option>
+                                        <option>Ford</option>
+                                        <option>Toyota</option>
+                                        <option>Mitsubishi</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect2">Model</label>
+                                    <select class="form-control" id="exampleFormControlSelect2">
+                                        <option selected>2019</option>
+                                        <option>2018</option>
+                                        <option>2017</option>
+                                        <option>2016</option>
+                                        <option>2015</option>
+                                    </select>
+                                </div>
+                                <div class="collapse sub-cate" id="filterExpand">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect3">Dòng xe</label>
+                                        <select class="form-control" id="exampleFormControlSelect3">
+                                            <option>Tất cả</option>
+                                            <option>Sedan</option>
+                                            <option>SUV</option>
+                                            <option>Minibus</option>
+                                            <option>Hatchback</option>
+                                            <option>Light truck</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect5">Năm sản xuất</label>
+                                        <select class="form-control" id="exampleFormControlSelect5">
+                                            <option>Tất cả</option>
+                                            <option>3</option>
+                                            <option>5</option>
+                                            <option>7</option>
+                                            <option>28 ~ 45</option>
+                                            <option>29-80</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect6">Số ghế</label>
+                                        <select class="form-control" id="exampleFormControlSelect6">
+                                            <option>Tất cả</option>
+                                            <option>3</option>
+                                            <option>5</option>
+                                            <option>7</option>
+                                            <option>28 ~ 45</option>
+                                            <option>29-80</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <p>
+                                    <a href="#" data-toggle="collapse" data-target="#filterExpand" aria-expanded="false" aria-controls="filterExpand">
+                                        <span class="full">Bộ lọc mở rộng &nbsp;&nbsp;<i class="fal fa-chevron-down"></i></span>
+                                        <span class="short">Thu gọn &nbsp;&nbsp;<i class="fal fa-chevron-up"></i></span>
+                                    </a>
+                                </p>
+                                <div class="text-right">
+                                    <button class="btn btn-light">Xóa bộ lọc</button>
+                                    <button class="btn btn-primary">Xem</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <p>Di chuyển vào khoang cabin, người lái được chào đón bằng hệ thống thông tin giải trí với màn hình cảm ứng cỡ lớn 10,25 inch đặt ở giữa bảng điều khiển và hệ thống đèn trang trí nội thất Sound Mood Lighting. Ngoài ra, khách hàng có thể mua thêm tùy chọn màn hình HUD 8 inch, hệ thống âm thanh cao cấp Bose với 8 loa và một số trang bị khác để biến nội thất của Kia Seltos 2020 trở nên tiện nghi và thoải mái như trong phòng khách.</p>
                     <p>Di chuyển vào khoang cabin, người lái được chào đón bằng hệ thống thông tin giải trí với màn hình cảm ứng cỡ lớn 10,25 inch đặt ở giữa bảng điều khiển và hệ thống đèn trang trí nội thất Sound Mood Lighting. Ngoài ra, khách hàng có thể mua thêm tùy chọn màn hình HUD 8 inch, hệ thống âm thanh cao cấp Bose với 8 loa và một số trang bị khác để biến nội thất của Kia Seltos 2020 trở nên tiện nghi và thoải mái như trong phòng khách.</p>
                     <div class="content-image pull-right">
@@ -306,13 +425,38 @@
                         <li><a href=""><i class="fal fa-share-alt"></i></a></li>
                     </ul>
                 </div>
+                <footer class="detail__footer">
+                    <div class="detail__comment">
+                        <div class="box-heading">Bình luận</div>
+                        <div class="box-content">
+                            <ul class="listing">
+                                <li class="comment">
+                                    <p><b class="name">Sơn Đặng</b> <time>- 10:11 10/09/2019</time></p>
+                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In cupiditate, facilis. Cupiditate facilis consequuntur, quos quam ipsa aliquam. Nobis, doloribus.</div>
+                                </li>
+                                <li class="comment">
+                                    <p><b class="name">Quý Trần</b> <time>- 10:11 10/09/2019</time></p>
+                                    <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo aliquid doloremque, atque dignissimos necessitatibus, ex molestias sed pariatur omnis minus sapiente rem ullam. Reprehenderit, consequuntur sunt ut tempore eaque laborum.</div>
+                                </li>
+                            </ul>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Xem thêm <span class="fal fa-plus"></span></button>
+                            </div>
+                            <div class="input clearfix">
+                                <textarea name="" id="" rows="3" class="form-control" placeholder="Ý kiến bạn đọc"></textarea>
+                                <p class="mt-1"><i>Vui lòng nhập tiếng Việt có dấu</i></p>
+                                <a class="btn btn-primary float-right" href="#" data-toggle="modal" data-target="#commentModal">Gửi bình luận</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </article>
             <!-- related box -->
             <!-- listing zone -->
             <div class="zone zone--listing">
                 <header class="zone__header">
                     <div class="container-fluid">
-                        <h3 class="zone__heading"><a href="02-category.html">Tim liên quan</a></h3>
+                        <h3 class="zone__heading"><a href="02-category.html">Tin liên quan</a></h3>
                     </div>
                 </header>
                 <div class="zone__content">
@@ -644,11 +788,38 @@
         </ul>
         <i class="fal fa-times button-close"></i>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Thông tin bạn đọc</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="commentEmail">Email bạn đọc</label>
+                        <input type="mail" class="form-control" id="commentEmail">
+                    </div>
+                    <div class="form-group">
+                        <label for="commentSubject">Tên hiển thị</label>
+                        <input type="text" class="form-control" id="commentSubject">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary btn-sm">Gửi</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="App_themes/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
     <script src="App_themes/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
     <script src="App_themes/js/app.js"></script>
 </body>

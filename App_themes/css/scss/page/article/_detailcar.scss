@@ -13,7 +13,7 @@
     &-car {
         .detail {
             &__header {
-                padding: 2rem;
+                padding: 0 1rem 1rem;
             }
 
             &__content {
@@ -32,6 +32,7 @@
                         border-left: 4px solid $blue;
                         padding-left: 8px;
                         font-weight: bold;
+                        font-size: 1rem;
                     }
 
                     &__table {
@@ -44,6 +45,14 @@
                                 background-color: #f0f0f0;
 
                                 *[class^='col-'] {}
+                            }
+                        }
+
+                        a {
+                            color: $blue;
+
+                            &:hover {
+                                text-decoration: underline;
                             }
                         }
                     }
@@ -64,7 +73,7 @@
                     font-size: 24px;
                     font-weight: bold;
                     color: $blue;
-                    margin-bottom: 16px;
+                    margin-bottom: 0.5rem;
                 }
             }
 
@@ -196,6 +205,18 @@
 
             &__nav {
                 margin: 24px 0;
+            }
+        }
+
+        .top-listing {
+            &.vertical {
+                .item {
+                    padding: 0;
+                }
+
+                .story {
+                    padding-top: 0;
+                }
             }
         }
     }
