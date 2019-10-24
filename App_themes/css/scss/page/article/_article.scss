@@ -580,6 +580,14 @@
                     flex-basis: calc(20% - 2px);
                 }
             }
+
+            .image-wrap {
+                position: static;
+
+                img {
+                    z-index: 20;
+                }
+            }
         }
 
         table {
