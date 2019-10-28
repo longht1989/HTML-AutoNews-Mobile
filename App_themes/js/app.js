@@ -90,7 +90,7 @@ $(function() {
     });
 
     mediumZoom('[data-zoomable]', {
-        margin: 24,
+        margin: 8,
         background: '#272727'
     });
 });

@@ -409,9 +409,16 @@
 .medium-zoom--opened {
     .medium-zoom-overlay {
         z-index: 31;
+
+        &+.medium-zoom-image {
+            visibility: hidden;
+        }
     }
 
     .medium-zoom-image--opened {
         z-index: 32;
+        object-fit: contain;
+        min-height: 85vh;
+        min-width: 90%;
     }
 }
