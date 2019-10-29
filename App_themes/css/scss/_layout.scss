@@ -418,7 +418,10 @@
     .medium-zoom-image--opened {
         z-index: 32;
         object-fit: contain;
-        min-height: 85vh;
-        min-width: 90%;
+        // min-height: 85vh;
+        // max-height: 85vh;
+        // min-width: 90vw;
+        // max-width: 90vw;
+        // will-change: left, top, transform; 
     }
 }

@@ -89,10 +89,17 @@ $(function() {
         $(this).siblings('.table-responsive').find('.f1-table-detail').toggleClass("is-active");
     });
 
-    mediumZoom('[data-zoomable]', {
+    const zoom = mediumZoom('[data-zoomable]', {
         margin: 8,
-        background: '#272727'
+        background: '#272727',
     });
+
+    zoom.on('open', function() {
+        $('body').append('<i class="medium-loading fas fa-circle-notch fa-spin" style="position: fixed; top: 50vh; left: 50vw; transform: translate(-50%,-50%) color: white; font-size: 56px; z-index:33; opacity:0.5;"></i> ');
+    })
+    zoom.on('opened', function() {
+        $('.medium-loading ').remove();
+    })
 });
 
 
