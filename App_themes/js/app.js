@@ -15,6 +15,7 @@ $(function() {
     /*button action*/
     $("#button-search").on('click', btnClick);
     $("#button-menu").on('click', btnClick);
+    $("#button-user").on('click', btnClick);
     $("#site-mask").on('click', siteMaskClick);
     $(".button-close").on('click', siteMaskClick);
 
@@ -88,18 +89,37 @@ $(function() {
         $(this).toggleClass("expand");
         $(this).siblings('.table-responsive').find('.f1-table-detail').toggleClass("is-active");
     });
+    if ($('.page-detail').length > 0) {
+        const zoom = mediumZoom('[data-zoomable]', {
+            margin: 8,
+            background: '#272727',
+        });
 
-    const zoom = mediumZoom('[data-zoomable]', {
-        margin: 8,
-        background: '#272727',
-    });
+        zoom.on('open', function() {
+            $('body').append('<i class="medium-loading fas fa-circle-notch fa-spin" style="position: fixed; top: 50vh; left: 50vw; transform: translate(-50%,-50%) color: white; font-size: 56px; z-index:33; opacity:0.5;"></i> ');
+        })
+        zoom.on('opened', function() {
+            $('.medium-loading ').remove();
+        })
+    }
 
-    zoom.on('open', function() {
-        $('body').append('<i class="medium-loading fas fa-circle-notch fa-spin" style="position: fixed; top: 50vh; left: 50vw; transform: translate(-50%,-50%) color: white; font-size: 56px; z-index:33; opacity:0.5;"></i> ');
-    })
-    zoom.on('opened', function() {
-        $('.medium-loading ').remove();
-    })
+    // toggle edit in user settings
+    if ($('.page-category').hasClass('user-page')) {
+        $('.button-edit').on('click', function() {
+            $(this).hide();
+            $(this).parents('.form-group').find('.button-submit').show();
+            $(this).parents('.form-wrap').find('.form-group').addClass('is-active');
+            $(this).parents('.form-wrap').find('.form-control').removeAttr('disabled');
+        })
+        $('.button-cancel').on('click', function() {
+            console.log('cancel')
+            $(this).parents('.form-group').find('.button-submit').hide();
+            $(this).parents('.form-wrap').find('.form-group').removeClass('is-active');
+            $(this).parents('.form-wrap').find('.form-control').attr('disabled', 'disabled');
+            $(this).parents('.form-group').find('.button-edit').show();
+        })
+    }
+
 });
 
 

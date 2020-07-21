@@ -26,6 +26,7 @@
             <div class="site-header__tools">
                 <a href="#search-input" id="button-search" data-target="wrap-search"><i class="fal fa-search"></i></a>
                 <i class="fal fa-bars" id="button-menu" data-target="wrap-menu"></i>
+                <i class="fal fa-user" id="button-user" data-target="wrap-user"></i>
             </div>
         </div>
     </header>
@@ -853,12 +854,51 @@
         </ul>
         <i class="fal fa-times button-close"></i>
     </div>
+    <!-- user wrap in site header -->
+    <div class="user-expand" id="wrap-user">
+        <i class="fal fa-times button-close"></i>
+        <div class="form-group">
+            <label for="exampleDropdownFormEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+            <label for="exampleDropdownFormPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <div class="form-check form-check-inline">
+                <label class="check"> Lưu mật khẩu
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+        <hr>
+        <p class="text-center text-uppercase mb-3">Đăng nhập bằng MXH</p>
+        <div class="signin">
+            <div class="btn-wrap">
+                <div class="text">
+                    <i class="fab fa-facebook-square"></i>
+                </div>
+                <input type="submit" name="ctl00$ucLogin1$btnLoginWithFacebook" value="Đăng nhập qua Facebook" id="ucLogin1_btnLoginWithFacebook" class="btn btn-primary btnLoginWithFacebook" spellcheck="false">
+            </div>
+            <div class="btn-wrap">
+                <div class="text">
+                    <i class="fab fa-google"></i>
+                </div>
+                <input type="submit" name="ctl00$ucLogin1$btnLoginWithGoogle" value="Đăng nhập qua Google" id="ucLogin1_btnLoginWithGoogle" class="btn btn-danger btnLoginWithGoogle" spellcheck="false">
+            </div>
+        </div>
+        <hr>
+        <a class="text-white" href="04-user-signup.html">Bạn là thành viên mới? Đăng ký ngay!</a><br>
+        <a class="text-white" href="04-user-signup.html">Quên mật khẩu?</a>
+    </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="App_themes/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
     <script src="App_themes/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
     <script src="App_themes/js/app.js?v=1.1"></script>
 </body>
 
