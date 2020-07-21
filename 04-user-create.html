@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="App_themes/css/flags.css">
     <!-- Customise css -->
     <link rel="stylesheet" href="App_themes/css/main.css?v=1.1">
-    <title>Auto News - User Setting</title>
+    <title>Auto News - User Create</title>
 </head>
 
 <body class="page-category user-page category-page">
@@ -35,34 +35,25 @@
         <!-- breadcrumbs -->
         <div class="container-fluid">
             <div class="user-content-column">
-                <div class="box mt-4">
-                    <div class="box-heading text-uppercase">Thông tin cá nhân</div>
+                <div class="box">
+                    <div class="box-heading text-uppercase mt-4"><b>Tạo bài viết mới</b></div>
                     <div class="box-content">
                         <div class="form-wrap mt-3">
-                            <hr>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail3">Email address</label>
-                                <input type="email" class="form-control" id="exampleDropdownFormEmail3" placeholder="automotor.guest@gmail.com" disabled>
+                            <div class="form-group mb-4">
+                                <label for="title">Tiêu đề</label>
+                                <input type="text" class="form-control" id="title" placeholder="Tiêu đề" style="background: white;">
                             </div>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail4">Tên hiển thị</label>
-                                <input type="text" class="form-control" id="exampleDropdownFormEmail4" placeholder="Nguyễn Văn A" disabled>
+                            <div class="form-group mb-4">
+                                <label for="textarea1">Nội dung tóm tắt</label>
+                                <textarea name="" id="textarea1" cols="30" rows="3" class="form-control mb-4" style="background: white;height: initial;"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="phone">Số điện thoại cá nhân</label>
-                                <input type="number" class="form-control" id="phone" placeholder="0123456789" disabled>
+                            <div class="form-group mb-4">
+                                <label for="textarea2">Nội dung bài viết</label>
+                                <textarea name="" id="textarea2" cols="30" rows="10" class="form-control mb-4" style="background: white;height: initial;"></textarea>
                             </div>
-                            <div class="form-group text-right">
-                                <button class="btn btn-primary button-edit">Chỉnh sửa</button>
-                                <button class="btn btn-default button-submit button-cancel">Hủy</button>
-                                <button type="submit" class="btn btn-primary button-submit">Lưu thay đổi</button>
+                            <div class="text-right mb-3">
+                                <button type="submit" class="btn btn-primary">Gửi bài viết</button>
                             </div>
-                        </div>
-                        <div class="form-wrap mb-4">
-                            <hr>
-                            <h4 class="mt-4"><b>Kết nối</b></h4>
-                            <div class=""><b>Kết nối đến Facebook</b><br>Bây giờ bạn có thể đăng nhập vào Autonews bằng tài khoản Facebook của mình. Chúng tôi sẽ không bao giờ đăng lên Facebook hoặc nhắn tin cho bạn bè của bạn mà không có sự cho phép của bạn.</div>
-                            <div class="mt-2"><a href="" class="btn btn-primary">Connect to Facebook</a></div>
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="App_themes/css/flags.css">
     <!-- Customise css -->
     <link rel="stylesheet" href="App_themes/css/main.css?v=1.1">
-    <title>Auto News - User Setting</title>
+    <title>Auto News - User Signup</title>
 </head>
 
 <body class="page-category user-page category-page">
@@ -34,35 +34,44 @@
     <main id="site-content">
         <!-- breadcrumbs -->
         <div class="container-fluid">
-            <div class="user-content-column">
-                <div class="box mt-4">
-                    <div class="box-heading text-uppercase">Thông tin cá nhân</div>
-                    <div class="box-content">
-                        <div class="form-wrap mt-3">
-                            <hr>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail3">Email address</label>
-                                <input type="email" class="form-control" id="exampleDropdownFormEmail3" placeholder="automotor.guest@gmail.com" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail4">Tên hiển thị</label>
-                                <input type="text" class="form-control" id="exampleDropdownFormEmail4" placeholder="Nguyễn Văn A" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Số điện thoại cá nhân</label>
-                                <input type="number" class="form-control" id="phone" placeholder="0123456789" disabled>
-                            </div>
-                            <div class="form-group text-right">
-                                <button class="btn btn-primary button-edit">Chỉnh sửa</button>
-                                <button class="btn btn-default button-submit button-cancel">Hủy</button>
-                                <button type="submit" class="btn btn-primary button-submit">Lưu thay đổi</button>
-                            </div>
+            <div class="box mt-4">
+                <div class="box-heading text-center text-uppercase mb-3"><b>Đăng ký</b></div>
+                <div class="box-content">
+                    <div class="user-expand mb-5">
+                        <div class="form-group">
+                            <label for="exampleDropdownFormEmail3">Email address</label>
+                            <input type="email" class="form-control" id="exampleDropdownFormEmail3" placeholder="email@example.com">
                         </div>
-                        <div class="form-wrap mb-4">
-                            <hr>
-                            <h4 class="mt-4"><b>Kết nối</b></h4>
-                            <div class=""><b>Kết nối đến Facebook</b><br>Bây giờ bạn có thể đăng nhập vào Autonews bằng tài khoản Facebook của mình. Chúng tôi sẽ không bao giờ đăng lên Facebook hoặc nhắn tin cho bạn bè của bạn mà không có sự cho phép của bạn.</div>
-                            <div class="mt-2"><a href="" class="btn btn-primary">Connect to Facebook</a></div>
+                        <div class="form-group">
+                            <label for="exampleDropdownFormPassword2">Mật khẩu</label>
+                            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleDropdownFormPassword3">Nhập lại mật khẩu</label>
+                            <input type="password" class="form-control" id="exampleDropdownFormPassword3" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label class="check" style="text-transform: none;">Tôi đã đọc &amp; đồng ý với các điều khoản
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="form-group text-right"><button type="submit" class="btn btn-primary btn-sm">Đăng ký</button></div>
+                        <hr>
+                        <p class="text-center text-uppercase mb-3">Đăng nhập bằng MXH</p>
+                        <div class="signin">
+                            <div class="btn-wrap">
+                                <div class="text">
+                                    <i class="fab fa-facebook-square"></i>
+                                </div>
+                                <input type="submit" name="ctl00$ucLogin1$btnLoginWithFacebook" value="Đăng nhập qua Facebook" id="ucLogin1_btnLoginWithFacebook" class="btn btn-primary btnLoginWithFacebook" spellcheck="false">
+                            </div>
+                            <div class="btn-wrap">
+                                <div class="text">
+                                    <i class="fab fa-google"></i>
+                                </div>
+                                <input type="submit" name="ctl00$ucLogin1$btnLoginWithGoogle" value="Đăng nhập qua Google" id="ucLogin1_btnLoginWithGoogle" class="btn btn-danger btnLoginWithGoogle" spellcheck="false">
+                            </div>
                         </div>
                     </div>
                 </div>

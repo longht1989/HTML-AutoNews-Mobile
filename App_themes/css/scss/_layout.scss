@@ -477,37 +477,41 @@
             }
         }
 
-        .btn-wrap {
-            position: relative;
-            margin-bottom: 0.5rem;
-
-            .text {
-                position: absolute;
-                top: 50%;
-                left: 4px;
-                transform: translate(50%, -50%);
-                color: white;
-            }
-        }
-
-        .btnLoginWithFacebook,
-        .btnLoginWithGoogle {
-            display: inline-block;
-            width: 100%;
-            text-align: left;
-            padding-left: 2.5rem;
-        }
-
-        .btn-primary {
-            background: $blue;
-            border-radius: 0;
-        }
 
         .dropdown-item {
             padding-left: 0;
             padding-right: 0;
         }
     }
+}
+
+.signin {
+    .btn-wrap {
+        position: relative;
+        margin-bottom: 0.5rem;
+
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            transform: translate(50%, -50%);
+            color: white;
+        }
+    }
+
+    .btnLoginWithFacebook,
+    .btnLoginWithGoogle {
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        padding-left: 2.5rem;
+    }
+
+    .btn-primary {
+        background: $blue;
+        border-radius: 0;
+    }
+
 }
 
 .medium-zoom--opened {
