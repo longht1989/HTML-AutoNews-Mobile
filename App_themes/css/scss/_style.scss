@@ -132,8 +132,6 @@
 
     .item {
         position: relative;
-        display: flex;
-        align-items: flex-end;
         overflow: hidden;
         min-height: 90vh;
 
@@ -415,6 +413,7 @@
             }
         }
 
+        .carousel-indicators,
         .bx-pager {
             justify-content: flex-start;
             left: 15px;
@@ -422,21 +421,28 @@
             padding: 0;
             width: initial;
             bottom: 7%;
+            margin-left: 0;
+            margin-right: 0;
 
+            li,
             .bx-pager-item {
-                width: 20%;
-                margin-right: 2%;
+                width: 64px;
+                margin-right: 4px;
                 background-color: rgba(white, 0.3);
+                display: flex;
 
                 a {
                     width: 0%;
-                    margin-left: 0;
-                    background-color: transparent;
-                    transition-property: ease-in-out;
+                    transform-property: ease-in-out;
+                    height: 100%;
                 }
 
-                .active {
-                    background-color: white;
+                &.active {
+                    opacity: 1;
+
+                    a {
+                        background-color: white;
+                    }
                 }
             }
         }
@@ -581,6 +587,29 @@
                 }
             }
         }
+
+        .carousel-indicators {
+            position: static;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding-top: 1rem;
+
+            li {
+                display: flex;
+                margin: 0 5px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border: 2px solid #c1c1c1;
+                text-indent: -999em;
+                background-clip: unset;
+
+                &.active {
+                    background-color: $primary;
+                    border-color: $primary;
+                }
+            }
+        }
     }
 
     &.vertical {
@@ -603,7 +632,7 @@
 
         .story {
             background-color: white;
-            padding: 4rem 0 2rem;
+            padding: 4rem 0 0rem;
             margin-top: 0;
 
             &__rank {
@@ -631,6 +660,29 @@
                 }
 
                 .active {
+                    background-color: $primary;
+                    border-color: $primary;
+                }
+            }
+        }
+
+        .carousel-indicators {
+            position: static;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding-top: 1rem;
+
+            li {
+                display: flex;
+                margin: 0 5px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border: 2px solid #c1c1c1;
+                text-indent: -999em;
+                background-clip: unset;
+
+                &.active {
                     background-color: $primary;
                     border-color: $primary;
                 }

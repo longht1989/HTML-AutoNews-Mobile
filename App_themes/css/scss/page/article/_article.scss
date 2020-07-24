@@ -3,6 +3,12 @@
 // ====================================
 
 // Note: wrap all article'elements exept sidebar
+.page-detail {
+    .site-header {
+        background-color: #000;
+    }
+}
+
 .detail-page {
     .site-header {
         margin-bottom: 40px;

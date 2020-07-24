@@ -20,57 +20,32 @@ $(function() {
     $(".button-close").on('click', siteMaskClick);
 
     /*slider*/
-    // hero index slide
+    // carousel slider for hero index
     var pause = 5000;
-    var heroslider = $('.hero-zone .wrap').bxSlider({
-        // stopAutoOnClick: 1,
-        auto: 1,
-        minSlides: 1,
-        maxSlides: 1,
-        slideMargin: 0,
-        controls: false,
-        pause: pause,
-        onSliderLoad: function() {
-            $('.hero-zone .bx-pager-item .bx-pager-link').css('width', '0%');
-            $('.hero-zone .bx-pager-item .active').animate({ width: '100%' }, pause, 'linear');
-        },
-        onSlideBefore: function() {
-            $('.hero-zone .bx-pager-item .active').finish();
-        },
-        onSlideAfter: function() {
-            heroslider.stopAuto();
-            heroslider.startAuto();
-            $('.hero-zone .bx-pager-item .bx-pager-link').css('width', '0%');
-            $('.hero-zone .bx-pager-item .active').animate({ width: '100%' }, pause, 'linear');
-        }
+    var heroslider = $('.hero-zone .wrap').carousel({
+        interval: 5000,
+        ride: 'carousel'
+    });
+    heroslider.on('slide.bs.carousel', function() {
+        console.log('before');
+        $('.hero-zone .carousel-indicators .active a').finish();
+    });
+    heroslider.on('slid.bs.carousel', function() {
+        console.log('after');
+        $('.hero-zone .carousel-indicators li a').css('width', '0px');
+        $('.hero-zone .carousel-indicators .active a').animate({ width: '64px' }, pause, 'linear');
     });
 
-    // best-selling-car slider
-    $('.top-listing.horizontal .wrap').bxSlider({
-        minSlides: 1,
-        maxSlides: 1,
-        slideMargin: 20,
-        controls: false,
-        auto: true,
-        pause: 20000
+    // top view slider
+    var horizontalSlider = $('.top-listing.horizontal .wrap').carousel({
+        interval: 5000,
+        ride: 'carousel'
     });
 
-    // top view
-    $('.top-listing.vertical .wrap').bxSlider({
-        slideWidth: '260',
-        minSlides: 1,
-        maxSlides: 2,
-        slideMargin: 20,
-        controls: false,
-        auto: true,
-        pause: 20000,
-        // set height for wrapper
-        onSliderLoad: function() {
-            var maxHeight = Math.max.apply(null, $(".top-listing.vertical .wrap .item").map(function() {
-                return $(this).outerHeight();
-            }).get());
-            $('.top-listing.vertical .wrap').height(maxHeight);
-        }
+    // top car slider
+    var horizontalSlider = $('.top-listing.vertical .wrap').carousel({
+        interval: 5000,
+        ride: 'carousel'
     });
 
     // > tab
@@ -83,12 +58,12 @@ $(function() {
         $("#" + t).show()
     });
 
-
     $(".f1-table .panel > button").click(function(e) {
         e.preventDefault();
         $(this).toggleClass("expand");
         $(this).siblings('.table-responsive').find('.f1-table-detail').toggleClass("is-active");
     });
+
     if ($('.page-detail').length > 0) {
         const zoom = mediumZoom('[data-zoomable]', {
             margin: 8,
@@ -119,7 +94,6 @@ $(function() {
             $(this).parents('.form-group').find('.button-edit').show();
         })
     }
-
 });
 
 
@@ -227,3 +201,42 @@ if ($(".detail-car-page").length > 0) {
         }
     });
 }
+
+// Normalize Carousel Heights - pass in Bootstrap Carousel items.
+$.fn.carouselHeights = function() {
+
+    var items = $(this), //grab all slides
+        heights = [], //create empty array to store height values
+        tallest; //create variable to make note of the tallest slide
+
+    var normalizeHeights = function() {
+
+        items.each(function() { //add heights to array
+            heights.push($(this).height());
+        });
+        tallest = Math.max.apply(null, heights); //cache largest value
+        items.each(function() {
+            $(this).css('min-height', tallest + 'px');
+        });
+    };
+
+    normalizeHeights();
+
+    $(window).on('resize orientationchange', function() {
+        //reset vars
+        tallest = 0;
+        heights.length = 0;
+
+        items.each(function() {
+            $(this).css('min-height', '0'); //reset min-height
+        });
+        normalizeHeights(); //run it again 
+    });
+};
+
+jQuery(function($) {
+    $(window).on('load', function() {
+        $('#topViewSlider .carousel-item').carouselHeights();
+        $('#topCarSlider .carousel-item').carouselHeights();
+    });
+});

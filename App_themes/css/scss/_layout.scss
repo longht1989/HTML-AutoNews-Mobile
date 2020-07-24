@@ -11,6 +11,10 @@
         top: 0;
         left: 0;
         right: 0;
+
+        &+#site-content {
+            margin-top: 72px;
+        }
     }
 
     .logo {
