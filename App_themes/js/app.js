@@ -22,19 +22,26 @@ $(function() {
     /*slider*/
     // carousel slider for hero index
     var pause = 5000;
+
     var heroslider = $('.hero-zone .wrap').carousel({
         interval: 5000,
         ride: 'carousel'
     });
     heroslider.on('slide.bs.carousel', function() {
-        console.log('before');
+        console.log('before slide');
         $('.hero-zone .carousel-indicators .active a').finish();
     });
     heroslider.on('slid.bs.carousel', function() {
-        console.log('after');
+        console.log('after slide');
         $('.hero-zone .carousel-indicators li a').css('width', '0px');
         $('.hero-zone .carousel-indicators .active a').animate({ width: '64px' }, pause, 'linear');
     });
+    // animate first time for the first indicator
+    var firstSlider = 1;
+    if (firstSlider) {
+        $('.hero-zone .carousel-indicators .active a').animate({ width: '64px' }, pause, 'linear');
+        firstSlider = 0;
+    }
 
     // top view slider
     var horizontalSlider = $('.top-listing.horizontal .wrap').carousel({
@@ -212,7 +219,7 @@ $.fn.carouselHeights = function() {
     var normalizeHeights = function() {
 
         items.each(function() { //add heights to array
-            heights.push($(this).height());
+            heights.push($(this).outerHeight());
         });
         tallest = Math.max.apply(null, heights); //cache largest value
         items.each(function() {

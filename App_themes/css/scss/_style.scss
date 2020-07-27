@@ -433,7 +433,7 @@
 
                 a {
                     width: 0%;
-                    transform-property: ease-in-out;
+                    transition-timing-function: ease-in-out;
                     height: 100%;
                 }
 
