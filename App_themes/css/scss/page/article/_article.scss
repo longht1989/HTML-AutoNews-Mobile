@@ -693,7 +693,6 @@
         }
 
         .detail__social {
-            float: right;
             margin-top: 24px;
         }
 
@@ -816,6 +815,35 @@
 
         .source {
             font-style: italic;
+        }
+    }
+
+    &__tag {
+        margin: 16px 0 !important;
+
+        .tag {
+            &-label {
+                margin-right: 4px;
+            }
+
+            &-item {
+                padding: 4px 8px;
+                color: $primary;
+                font-size: 0.825em;
+                transition: none;
+                display: inline-block;
+
+                &:hover {
+                    color: white;
+                    text-decoration: none;
+                    background-color: darken($primary, 0%);
+                }
+
+                &+.tag-item {
+                    margin-left: 4px;
+                }
+
+            }
         }
     }
 
