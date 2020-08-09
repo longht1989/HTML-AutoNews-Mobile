@@ -446,6 +446,14 @@
                 }
             }
         }
+
+        .bx-pager {
+            &-item {
+                height: 2px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
     }
 }
 
