@@ -672,7 +672,7 @@
 
                 &::before {
                     content: '';
-                    font-family: "Font Awesome 5 Free";
+                    font-family: "Font Awesome 5 Pro";
                     left: -20px;
                     top: -36px;
                     border: none;
@@ -709,6 +709,7 @@
     &__relate {
 
         .box {
+
             &.sidebar-box {
                 .box-heading {
                     font-size: 1.125rem;
@@ -731,6 +732,14 @@
                                 width: 90px;
                             }
                         }
+                    }
+                }
+
+                a {
+                    color: black;
+
+                    &:hover {
+                        color: $primary;
                     }
                 }
             }
@@ -789,6 +798,70 @@
                         width: 8px;
                         height: 8px;
                         background-color: $primary;
+                    }
+                }
+            }
+
+            &.has-border {
+                .box-content {
+                    padding: 16px 8px !important;
+                    border: 1px solid #000;
+                }
+            }
+
+            &.car-relate {
+                margin-left: -1rem;
+                margin-right: -1rem;
+                width: initial;
+
+                .box-heading {
+                    padding: 0 1rem;
+                }
+
+                .box-content {
+                    overflow: auto;
+                    white-space: nowrap;
+                    scrollbar-color: #ccc transparent;
+                    scrollbar-width: thin;
+
+                    &::-webkit-scrollbar {
+                        width: 12px;
+                        height: 8px;
+                    }
+
+                    /* Track */
+                    &::-webkit-scrollbar-track {
+                        background: transparent;
+                    }
+
+                    /* Handle */
+                    &::-webkit-scrollbar-thumb {
+                        background: #ccc;
+                        border-radius: 8px;
+                    }
+
+                    /* Handle on hover */
+                    &::-webkit-scrollbar-thumb:hover {
+                        background: #555;
+                    }
+
+                    .story {
+                        display: inline-block;
+                        width: 55%;
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        vertical-align: top;
+                        white-space: initial;
+
+                        &~.story {
+                            padding-top: 0;
+                            margin-top: 0;
+                            border-top: none;
+                        }
+
+                        &__thumb {
+                            margin-bottom: 0.5rem;
+                        }
                     }
                 }
             }
