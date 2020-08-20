@@ -27,12 +27,12 @@ $(function() {
         interval: 5000,
         ride: 'carousel'
     });
+    // console.log('before slide');
     heroslider.on('slide.bs.carousel', function() {
-        console.log('before slide');
         $('.hero-zone .carousel-indicators .active span').finish();
     });
+    // console.log('after slide');
     heroslider.on('slid.bs.carousel', function() {
-        console.log('after slide');
         $('.hero-zone .carousel-indicators li span').css('width', '0px');
         $('.hero-zone .carousel-indicators .active span').animate({ width: '64px' }, pause, 'linear');
     });
