@@ -29,17 +29,17 @@ $(function() {
     });
     heroslider.on('slide.bs.carousel', function() {
         console.log('before slide');
-        $('.hero-zone .carousel-indicators .active a').finish();
+        $('.hero-zone .carousel-indicators .active span').finish();
     });
     heroslider.on('slid.bs.carousel', function() {
         console.log('after slide');
-        $('.hero-zone .carousel-indicators li a').css('width', '0px');
-        $('.hero-zone .carousel-indicators .active a').animate({ width: '64px' }, pause, 'linear');
+        $('.hero-zone .carousel-indicators li span').css('width', '0px');
+        $('.hero-zone .carousel-indicators .active span').animate({ width: '64px' }, pause, 'linear');
     });
     // animate first time for the first indicator
     var firstSlider = 1;
     if (firstSlider) {
-        $('.hero-zone .carousel-indicators .active a').animate({ width: '64px' }, pause, 'linear');
+        $('.hero-zone .carousel-indicators .active span').animate({ width: '64px' }, pause, 'linear');
         firstSlider = 0;
     }
 

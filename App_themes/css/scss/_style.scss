@@ -294,7 +294,7 @@
                 display: flex;
                 float: right;
                 font-size: 14px;
-                margin-top: 12px;
+                margin-top: 2px;
                 line-height: 24px;
 
                 .fab {
@@ -448,6 +448,7 @@
                 background-color: rgba(white, 0.3);
                 display: flex;
 
+                span,
                 a {
                     width: 0%;
                     transition-timing-function: ease-in-out;
@@ -457,6 +458,7 @@
                 &.active {
                     opacity: 1;
 
+                    span,
                     a {
                         background-color: white;
                     }
@@ -468,6 +470,7 @@
             &-item {
                 height: 2px;
 
+                span,
                 a {
                     margin-left: 0;
                     margin-right: 0;
