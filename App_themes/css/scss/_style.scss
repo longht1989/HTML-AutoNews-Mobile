@@ -289,6 +289,23 @@
     &.video-zone {
         top: 0;
 
+        .zone__heading {
+            .subscribe-youtube {
+                display: flex;
+                float: right;
+                font-size: 14px;
+                margin-top: 12px;
+                line-height: 24px;
+
+                .fab {
+                    font-weight: normal;
+                    color: #F44336;
+                    font-size: 24px;
+                    margin-left: 4px;
+                }
+            }
+        }
+
         .rank-1-stories {
             padding-top: 4rem;
 
