@@ -1,0 +1,159 @@
+*[class*="fa-"] {
+    display: inline-block;
+    background-image: url('../images/sprites.svg');
+    background-size: 500px 500px;
+    vertical-align: middle;
+    transition: all 0.2s ease-in-out;
+}
+
+.fa {
+    &-search {
+        width: 40px;
+        height: 30px;
+        background-position: 0px 0px;
+
+        .search-form & {
+            width: 24px;
+        }
+    }
+
+    &-bars {
+        width: 40px;
+        height: 30px;
+        background-position: -50px 0px;
+    }
+
+    &-chart-line {
+        width: 14px;
+        height: 14px;
+        background-position: -100px -50px;
+        vertical-align: text-top;
+    }
+
+    &-user {
+        width: 40px;
+        height: 30px;
+        background-position: -100px 0px;
+    }
+
+    &-times {
+        width: 16px;
+        height: 32px;
+        background-position: -150px 0px;
+    }
+
+    &-angle-up {
+        width: 24px;
+        height: 24px;
+        background-position: -50px -100px;
+        vertical-align: initial;
+    }
+
+    &-facebook-square {
+        width: 16px;
+        height: 16px;
+        background-position: -400px -0px;
+        vertical-align: text-bottom;
+
+        .site-footer & {
+            width: 24px;
+            height: 24px;
+            background-position: -350px -100px;
+        }
+
+        .signin & {
+            background-position: -400px -50px;
+        }
+    }
+
+    &-youtube-square {
+        width: 16px;
+        height: 16px;
+        background-position: -450px -0px;
+        vertical-align: text-bottom;
+    }
+
+    &-google {
+        width: 16px;
+        height: 16px;
+        background-position: -450px -50px;
+    }
+
+    &-youtube {
+        width: 26px;
+        height: 18px;
+        background-position: -450px -100px;
+
+        .site-footer & {
+            width: 24px;
+            height: 24px;
+            background-position: -400px -100px;
+        }
+    }
+
+    &-envelope {
+        width: 16px;
+        height: 16px;
+        background-position: -250px -0px;
+    }
+
+    &-phone-square {
+        width: 16px;
+        height: 16px;
+        background-position: -200px -0px;
+    }
+
+    &-chevron-down {
+        width: 16px;
+        height: 16px;
+        background-position: -250px -50px;
+    }
+
+    &-chevron-up {
+        width: 16px;
+        height: 16px;
+        background-position: -250px -100px;
+    }
+
+    &-play-circle {
+        width: 20px;
+        height: 20px;
+        background-position: 0 -50px;
+
+        .rank-1-stories & {
+            width: 40px;
+            height: 40px;
+            background-position: 0 -100px;
+        }
+    }
+
+    &-comment {
+        width: 14px;
+        height: 14px;
+        background-position: -300px 0px;
+    }
+
+    &-share-alt {
+        width: 14px;
+        height: 14px;
+        background-position: -350px 0px;
+    }
+
+    &-arrow-down {
+        width: 18px;
+        height: 18px;
+        background-position: -150px -50px;
+    }
+
+    &-comment-alt-exclamation {
+        width: 14px;
+        height: 14px;
+        background-position: -200px -50px;
+    }
+
+    &-tags {
+        width: 20px;
+        height: 16px;
+        background-position: -350px -50px;
+    }
+}

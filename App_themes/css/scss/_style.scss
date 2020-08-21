@@ -298,10 +298,7 @@
                 line-height: 24px;
 
                 .fab {
-                    font-weight: normal;
-                    color: #F44336;
-                    font-size: 24px;
-                    margin-left: 4px;
+                    margin: 2px 0 0 4px;
                 }
             }
         }
@@ -334,7 +331,7 @@
                 &__header {
                     position: relative;
                     top: -2rem;
-                    padding: 1rem;
+                    padding: 1rem 1rem 1rem 2.5rem;
                     max-width: 90%;
                     margin: auto;
                 }
@@ -345,8 +342,8 @@
                     max-height: initial;
 
                     .fal {
-                        font-size: 1.25rem;
-                        margin-right: 1rem;
+                        position: absolute;
+                        left: 8px;
                     }
                 }
             }

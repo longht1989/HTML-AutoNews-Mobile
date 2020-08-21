@@ -676,18 +676,19 @@
                 margin-left: 0;
 
                 &::before {
-                    content: '';
-                    font-family: "Font Awesome 5 Pro";
-                    left: -20px;
-                    top: -36px;
+                    content: '';
+                    display: block;
+                    left: 0;
+                    top: 0;
                     border: none;
-                    background: white;
-                    color: $blue;
                     bottom: auto;
                     right: auto;
-                    padding: 10px;
-                    font-size: 40px;
-                    font-weight: 900;
+                    width: 40px;
+                    height: 40px;
+                    background-color: #fff;
+                    background-image: url('../images/sprites.svg');
+                    background-position: -300px -50px;
+                    transform: translate(-50%, -50%);
                 }
 
                 &.quotes-right {
