@@ -3,9 +3,14 @@
     &-common {
         .form-control {
             width: 100%;
-            background: #333;
             color: #fff;
             border-radius: 0;
+            -webkit-appearance: none;
+            /*Removes default chrome and safari style*/
+            -moz-appearance: none;
+            /* Removes Default Firefox style*/
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAHCAYAAADTcMcaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABCSURBVHgBjczdCQAgCARgN3eFRnCjRrqSCKT8O/BBuU8CMPcwFdGOdu8iOOECaIY9htAA8b59MAUebAEH9sADQ7AAe9Z9ledIBT8AAAAASUVORK5CYII=') no-repeat right 8px center;
+            background-color: #333;
         }
     }
 }
