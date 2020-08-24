@@ -19,13 +19,17 @@
 
     .logo {
         line-height: 40px;
+        height: 40px;
         float: left;
         margin: 0;
 
-        img {
-            display: block;
+        a {
+            display: inline-block;
+            width: 118px;
             height: 40px;
-            width: auto;
+            background-image: url('../images/sprites.svg');
+            background-size: 500px 500px;
+            background-position: 0 -200px;
         }
     }
 
@@ -92,13 +96,23 @@
     }
 
     .logo-zone {
-        margin-bottom: 3rem;
+        margin-bottom: 0.5rem;
+        font-size: 0;
+
+        a {
+            display: inline-block;
+            width: 118px;
+            height: 40px;
+            background-image: url('../images/sprites.svg');
+            background-size: 500px 500px;
+            background-position: 0 -200px;
+        }
     }
 
     .box-heading {
         color: white;
         font-size: 1.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         text-transform: uppercase;
     }
 
@@ -128,11 +142,20 @@
         }
 
         &-right {
-            margin-top: 1rem;
+            margin-top: 2rem;
 
             h1,
             h3 {
                 font-size: 0.75rem;
+            }
+
+            a.hemera {
+                display: inline-block;
+                width: 140px;
+                height: 80px;
+                background-image: url('../images/sprites.svg');
+                background-size: 500px 500px;
+                background-position: -300px -150px;
             }
         }
     }
