@@ -699,10 +699,11 @@
             background-color: #f0f0f0;
             margin: 0;
             padding-top: 1rem;
+            flex-wrap: wrap;
 
             li {
                 display: flex;
-                margin: 0 5px;
+                margin: 0 5px 5px;
                 width: 10px;
                 height: 10px;
                 border-radius: 50%;
