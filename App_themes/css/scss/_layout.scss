@@ -420,9 +420,13 @@
             padding: 1rem;
             background-color: #333;
 
-            img {
-                max-height: 40px;
-                width: auto;
+            a {
+                display: inline-block;
+                width: 118px;
+                height: 40px;
+                background-image: url('../images/sprites.svg');
+                background-size: 500px 500px;
+                background-position: 0 -200px;
             }
         }
 
