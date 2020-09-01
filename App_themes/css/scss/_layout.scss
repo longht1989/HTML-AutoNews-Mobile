@@ -404,6 +404,22 @@
                     }
                 }
             }
+
+            .zone-common {
+                margin-bottom: 0;
+
+                .zone__heading {
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .form-group {
+                    label {
+                        font-weight: normal;
+                        font-size: 0.875rem;
+                    }
+                }
+            }
         }
 
         .fa-times {
