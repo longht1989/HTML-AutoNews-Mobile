@@ -1,16 +1,7 @@
 // init function
 $(function() {
     /*pin header */
-    window.onscroll = function() { windowScroll() };
-
-    // fix URL click on bxslider
-    if (window.navigator.userAgent.toLowerCase().indexOf("chrome") > 0) {
-        $("body").on("mousedown", ".bx-viewport a", function() {
-            if ($(this).attr("href") && $(this).attr("href") != "#") {
-                window.location = $(this).attr("href");
-            }
-        });
-    }
+    window.onscroll = function() { windowScroll(); };
 
     /*button action*/
     $("#button-search").on('click', btnClick);
@@ -110,10 +101,10 @@ function windowScroll() {
     var headerHeight = $("#site-header").outerHeight();
     if (document.body.scrollTop > headerHeight || document.documentElement.scrollTop > headerHeight) {
         $("#site-header").addClass('is-pinned');
-        $("#btnGotop").fadeIn('slow');
+        $("#btnGotop").show();
     } else {
         $("#site-header").removeClass('is-pinned');
-        $("#btnGotop").fadeOut('slow');
+        $("#btnGotop").hide();
     }
 }
 
