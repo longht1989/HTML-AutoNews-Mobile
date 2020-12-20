@@ -27,7 +27,7 @@
             display: inline-block;
             width: 118px;
             height: 40px;
-            background-image: url('../images/sprites.svg?v1.01');
+            background-image: url('../images/sprites.svg?v1.02');
             background-size: 500px 500px;
             background-position: 0 -200px;
         }
@@ -103,7 +103,7 @@
             display: inline-block;
             width: 118px;
             height: 40px;
-            background-image: url('../images/sprites.svg?v1.01');
+            background-image: url('../images/sprites.svg?v1.02');
             background-size: 500px 500px;
             background-position: 0 -200px;
         }
@@ -153,7 +153,7 @@
                 display: inline-block;
                 width: 70px;
                 height: 40px;
-                background-image: url('../images/sprites.svg?v1.01');
+                background-image: url('../images/sprites.svg?v1.02');
                 background-size: 500px 500px;
                 background-position: -300px -150px;
             }
@@ -176,6 +176,26 @@
 
         &:hover {
             opacity: 0.8;
+        }
+    }
+
+    #btnFilter {
+        position: fixed;
+        bottom: 3.5rem;
+        right: 0.5rem;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        line-height: 40px;
+        color: white;
+        text-align: center;
+        display: none;
+        z-index: 31;
+        background-image: url('../images/sprites.svg?v1.02');
+        background-position: -350px -200px;
+
+        &:hover {
+            background-position: -400px -200px;
         }
     }
 }
@@ -440,7 +460,7 @@
                 display: inline-block;
                 width: 118px;
                 height: 40px;
-                background-image: url('../images/sprites.svg?v1.01');
+                background-image: url('../images/sprites.svg?v1.02');
                 background-size: 500px 500px;
                 background-position: 0 -200px;
             }

@@ -78,6 +78,8 @@ $(function() {
             $(this).parents('.form-group').find('.button-edit').show();
         })
     }
+
+    $('.btn-toggle').on('click', toggleCarFilter);
 });
 
 
@@ -102,9 +104,11 @@ function windowScroll() {
     if (document.body.scrollTop > headerHeight || document.documentElement.scrollTop > headerHeight) {
         $("#site-header").addClass('is-pinned');
         $("#btnGotop").show();
+        $("#btnFilter").show();
     } else {
         $("#site-header").removeClass('is-pinned');
         $("#btnGotop").hide();
+        $("#btnFilter").hide();
     }
 }
 
@@ -208,3 +212,11 @@ jQuery(function($) {
         $('#samePriceSlider .carousel-item').carouselHeights();
     });
 });
+
+// button toggle for filter in car listing page
+function toggleCarFilter(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).siblings('.row--extend').toggleClass('is-active');
+    $(this).toggleClass('is-active');
+}

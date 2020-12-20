@@ -1,6 +1,6 @@
 *[class*="fa-"] {
     display: inline-block;
-    background-image: url('../images/sprites.svg?v1.01');
+    background-image: url('../images/sprites.svg?v1.02');
     background-size: 500px 500px;
     vertical-align: middle;
     transition: all 0.2s ease-in-out;
@@ -174,5 +174,23 @@
         width: 24px;
         height: 24px;
         background-position: -250px -200px;
+    }
+
+    &-sort-alt {
+        width: 24px;
+        height: 24px;
+        background-position: -300px -200px;
+    }
+
+    &-chevron-circle-down {
+        width: 16px;
+        height: 16px;
+        background-position: -400px -150px;
+    }
+
+    &-chevron-circle-up {
+        width: 16px;
+        height: 16px;
+        background-position: -450px -150px;
     }
 }

@@ -14,6 +14,77 @@
         .bx-pager {}
     }
 
+    #topBrandSlider {
+        .carousel-indicators {
+            position: static;
+
+            li {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                text-indent: -9999em;
+                background-color: #ced4da;
+                vertical-align: text-bottom;
+
+                &.active {
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+
+    .zone-common {
+        .form-group {
+            .row--extend {
+                display: none;
+
+                &.is-active {
+                    display: flex;
+                }
+            }
+        }
+
+        .btn-toggle {
+            .fa-chevron-circle-up {
+                display: none;
+            }
+
+            &.is-active {
+                .fa-chevron-circle-down {
+                    display: none;
+                }
+
+                .fa-chevron-circle-up {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .zone__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+
+        .zone__heading {
+            margin-bottom: 0;
+        }
+
+        .zone__filter {
+            margin-left: auto;
+
+            .dropdown-menu {
+                li {
+
+                    a {
+                        display: block;
+                        padding: 0.25rem 0.5rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .zone--listing {
